@@ -1,4 +1,4 @@
-import { Controller, Post, Body } from "@nestjs/common";
+import { Controller, Post, Body, Get } from "@nestjs/common";
 
 import { ProductsService } from "./products.service";
 
@@ -22,5 +22,10 @@ export class ProductsController {
         else{
             return {msg: 'Não há título'};
         }
+    }
+
+    @Get()
+    getAllProducts(){
+        return this.productsService.getProducts();
     }
 } 
